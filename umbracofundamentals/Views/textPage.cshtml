@@ -19,8 +19,19 @@
                 </div>
                 <div class="col-md-2 mt-4 align-self-start">
                     <ul class="side-nav">
-			<a href=""><li>Sample</li></a>
-			<a href=""><li>Sample</li></a>
+                        @foreach (var child in Model.AncestorOrSelf(2).Children)
+                        {
+                            <li>
+                                @if (Model.Name == child.Name)
+                                {
+                                    <h6 class="uppercase"><a class="nav-current" href="@child.Url()">@child.Name</a></h6>
+                                }
+                                else
+                                {
+                                    <h6 class="uppercase"><a href="@child.Url()">@child.Name</a></h6>
+                                }
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

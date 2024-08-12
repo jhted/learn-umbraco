@@ -47,10 +47,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav-header">
                 <ul class="navbar-nav ml-auto">
-                    
+                    @foreach (var child in Model.Root().Children()){
                         <li class="nav-item">
-                            <a class="nav-link" href="/about-us">About page</a>
+                            <a class="nav-link" href="@child.Url()">@child.Name</a>
                         </li>
+                    }
                     <li class="nav-item lang-dropdown clickable" onclick="langDropdown()">
 
                             <span class="nav-link">
