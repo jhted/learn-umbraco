@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+@using Umbraco.Extensions
+
+<div class="block-grid-layout block-grid1">
+    @foreach (var area in Model.Areas)
+    {
+        <div class="block-grid-area" style="grid-area:@area.Alias">
+            @Html.GetBlockGridItemAreas(area)
+        </div>
+    }
+</div>

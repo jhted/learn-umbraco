@@ -1,0 +1,11 @@
+﻿@using Umbraco.Cms.Core.Models
+@model Umbraco.Cms.Core.Models.Blocks.BlockGridItem
+
+@{
+    var image = Model.Content.Value<MediaWithCrops>("image");
+}
+
+@if (image != null)
+{
+    <img src="@image.Url()" alt="@image.Name" />
+}
