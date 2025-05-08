@@ -1,11 +1,18 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockGridItem>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using Umbraco.Cms.Core.Models.Blocks
 @using Umbraco.Extensions
 
 <div class="block-grid-layout block-grid1">
-    @foreach (var area in Model.Areas)
+    @if (Model != null && Model.Areas != null)
     {
-        <div class="block-grid-area" style="grid-area:@area.Alias">
-            @Html.GetBlockGridItemAreas(area)
-        </div>
+        foreach (var area in Model.Areas)
+        {
+            <div class="block-grid-area" style="grid-area:@area.Alias">
+                @{
+                    // @Umbraco.GetBlockGridItemAreas(area)
+                }
+            </div>
+        }
     }
+    Umbraco.GetBlockGridItemAreas(area)
 </div>
