@@ -5,14 +5,15 @@
 <div class="block-grid-layout block-grid1">
     @if (Model != null && Model.Areas != null)
     {
+        @Model.Areas.Count()
         foreach (var area in Model.Areas)
         {
             <div class="block-grid-area" style="grid-area:@area.Alias">
+                @area.Alias
                 @{
                     // @Umbraco.GetBlockGridItemAreas(area)
                 }
             </div>
         }
     }
-    Umbraco.GetBlockGridItemAreas(area)
 </div>
