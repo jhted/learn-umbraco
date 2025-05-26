@@ -66,6 +66,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel ProductGrid => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "productGrid");
 
 		///<summary>
+		/// Review Form
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.1.1+eb4fc97")]
+		[ImplementPropertyType("reviewForm")]
+		public virtual global::System.Nullable<global::System.Guid> ReviewForm => this.Value<global::System.Nullable<global::System.Guid>>(_publishedValueFallback, "reviewForm");
+
+		///<summary>
 		/// Reviews
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.1.1+eb4fc97")]

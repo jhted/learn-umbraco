@@ -1,6 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Product>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Forms.Web.Views
+
 @{
 	Layout = "childPage.cshtml";
 }
@@ -16,6 +18,10 @@
             <h3>Customer reviews</h3>
             @await Html.GetBlockListHtmlAsync(Model, "Reviews")
 
+            <br/>
+            
+            @await Umbraco.RenderFormAsync(new Guid("601182c7-40bb-468f-9b01-1adb489e264f"))
+ 
         </div>
     </div>
 </section>
