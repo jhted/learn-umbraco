@@ -1,19 +1,24 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @using Umbraco.Cms.Core.Models.Blocks
 @using Umbraco.Extensions
+@{
+    @*var grid = Model.Value<BlockGridModel>(Model);*@
 
+    // get the number of columns defined for the grid
+    var gridColumns = Model.GridColumns;
+}
 <div class="block-grid-layout block-grid1">
-    @if (Model != null && Model.Areas != null)
+    @* @if (Model != null && Model.Areas.Any())
     {
-        @Model.Areas.Count()
         foreach (var area in Model.Areas)
         {
             <div class="block-grid-area" style="grid-area:@area.Alias">
-                @area.Alias
-                @{
-                    // @Umbraco.GetBlockGridItemAreas(area)
-                }
+                Html
+                @ *
+                @Html.Raw(area.Content.Value("description"))
+                @Umbraco.GetBlockGridItemAreas(area)
+                * @
             </div>
         }
-    }
+    } *@
 </div>
