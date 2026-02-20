@@ -49,7 +49,15 @@
                                 <div class="blog-item">
                                     <div class="blog-img">
                                         <a href="@item.Url()">
-                                            <img src="@(string.IsNullOrEmpty(item.Image?.Url()) ? "https://placehold.co/400x250" : item.Image?.Url())" alt="" />
+                                            @if(item.Image != null)
+                                            {
+                                                var mediaCrop = Url.GetCropUrl(item.Image, "BlogThumbnail");
+                                                <img src="@mediaCrop" alt="@item.Name" />
+                                            }
+                                            else
+                                            {
+                                                <img src="https://placehold.co/400x250" alt="" />
+                                            }
                                         </a>
                                     </div>
                                     <div class="blog-text">
