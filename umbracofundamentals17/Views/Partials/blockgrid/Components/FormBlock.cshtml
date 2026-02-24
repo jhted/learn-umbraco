@@ -1,0 +1,7 @@
+﻿@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using Umbraco.Forms.Web;
+@using Umbraco.Forms.Web.Extensions;
+
+@await Component.InvokeAsync("RenderForm", new { formId = @Model.Content.Value("Form"),includeScripts = true })
+@Html.RenderUmbracoFormDependencies(Url)

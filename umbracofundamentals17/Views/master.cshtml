@@ -48,23 +48,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav-header">
                 <ul class="navbar-nav ml-auto">
-                    @foreach(var child in Model.Root().Children())
-                    {
+                    @foreach(var item in Model.Root().Children()){
                         <li class="nav-item">
-                            <a class="nav-link" href="@child.Url()">@child.Name</a>
+                            <a class="nav-link" href="@item.Url(Model.GetCultureFromDomains())">@item.Name</a>
                         </li>
                     }
                     <li class="nav-item lang-dropdown clickable" onclick="langDropdown()">
-
+                    
                             <span class="nav-link">
-                               EN
+                                @Model.GetCultureFromDomains()
                             </span>
-
+                    
                         <div class="lang-dropdown-content" style="visibility:hidden" id="langDropdown">
-                            We will add more here later
+                            @foreach (var (culture, infos) in root.Cultures)
+                            {
+                                <a class="nav-link" href="@Model.Url(culture)">@culture</a> 
+                            }
                         </div>
                     </li>
-            </ul>
+
+                </ul>
             </div>
         </div>
         </div>
