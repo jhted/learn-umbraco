@@ -5,16 +5,11 @@
 @inject ITagQuery _tagQuery;
 
 @{
-    Layout = "master.cshtml";
+    Layout = "childPage.cshtml";
     var blogs = Model.Children<BlogEntry>().OrderByDescending(x => x.CreateDate);
     var allContentTags = _tagQuery.GetAllContentTags();
     var tagList = allContentTags.ToList();
 }
-<div class="jumbotron jumbotron-small jumbotron-single d-flex align-items-center">
-  <div class="container text-center">
-    <h1 class="display-2 mb-4">@Model.Name</h1>
-  </div>
-</div>
 <section id="blog" class="bg-grey">
     <div class="container">
         <div class="section-content">
@@ -97,14 +92,3 @@
     </div>
 </section>
 
-<section class="bg-fixed overlay">
-    <div class="container">
-        <div class="section-content">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="mb-2"></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
