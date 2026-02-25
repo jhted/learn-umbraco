@@ -18,35 +18,35 @@
                 <div class="col-md-12 blog-holder">
                     <div class="row">
                         @foreach(var item in products){
-                        <div class="col-md-4 blog-item-wrapper">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    @{
-                                    var image = item.Value<IPublishedContent>("previewImage");
-                                    if(image != null){
-                                    <a href="@item.Url()"><img src="@image.Url()?width=400&height=250" alt=""></a>
-                                    }else{
-                                    <a href="@item.Url()"><img src="https://placehold.co/400x250" alt=""></a>
-                                    }
-                                    }
-                                </div>
-                                <div class="blog-text">
-                                    <div class="blog-title">
-                                        <a href="@item.Url()"><h4>@item.Name</h4></a>
+                            <div class="col-md-4 blog-item-wrapper">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        @{
+                                            var image = item.Value<IPublishedContent>("previewImage");
+                                            if(image != null){
+                                                <a href="@item.Url()"><img src="@image.Url()?width=400&height=250" alt=""></a>
+                                            }else{
+                                                <a href="@item.Url()"><img src="https://placehold.co/400x250" alt=""></a>
+                                            }
+                                        }
                                     </div>
-                                    <div class="blog-desc">
-                                      @*You can implement a description here*@
-                                    </div>
-                                    
-                                    <div class="blog-price">
-                                       @*You can implement a price here*@
-                                    </div>
-                                    <div style="display:inline-block" class="blog-share-wrapper">
-                                       <button type="button" class="btn btn-outline-primary" disabled="disabled">OUT OF STOCK</button>
+                                    <div class="blog-text">
+                                        <div class="blog-title">
+                                            <a href="@item.Url()"><h4>@item.Name</h4></a>
+                                        </div>
+                                        <div class="blog-desc">
+                                            @*You can implement a description here*@
+                                        </div>
+                                        
+                                        <div class="blog-price">
+                                            @*You can implement a price here*@
+                                        </div>
+                                        <div style="display:inline-block" class="blog-share-wrapper">
+                                            <button type="button" class="btn btn-outline-primary" disabled="disabled">OUT OF STOCK</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         }
                     </div>
                 </div>
